@@ -1,0 +1,38 @@
+language: node_js
+node_js:
+    - "lts/*"
+    - "8"
+
+cache:
+  directories:
+    - "node_modules"
+
+deploy:
+- provider: s3
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  local_dir: dpl_cd_upload
+  skip_cleanup: true
+  on: &2
+    repo: creedasaurus/creedio
+    branch: deploy
+  bucket: creedio-build-bucket
+  region: us-west-2
+- provider: codedeploy
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: creedio-build-bucket
+  key: latest.zip
+  bundle_type: zip
+  application: creedio
+  deployment_group: CreedioDeployGroup
+  region: us-west-2
+  on: *2
+script:
+  - npm run test
+  - rm -rf node_modules
+  - zip -r latest *
+  - mkdir -p dpl_cd_upload
+  - mv latest.zip dpl_cd_upload/latest.zip
+
+

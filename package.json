@@ -1,0 +1,23 @@
+{
+  "name": "creedio",
+  "version": "0.0.1",
+  "description": "Just a place to connect various web things",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"no tests yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:creedasaurus/creedio.git"
+  },
+  "keywords": [
+    "react",
+    "babel",
+    "golang"
+  ],
+  "author": "Creed Haymond",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.11.0"
+  }
+}
