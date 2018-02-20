@@ -29,7 +29,7 @@ deploy:
   region: us-west-2
   on: *2
 script:
-  - npm run test
+  - npm run build
   - rm -rf node_modules
   - zip -r latest *
   - mkdir -p dpl_cd_upload

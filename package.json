@@ -4,7 +4,9 @@
   "description": "Just a place to connect various web things",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"no tests yet\""
+    "test": "echo \"no tests yet\"",
+    "build": "webpack",
+    "serv": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,13 @@
   "author": "Creed Haymond",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^3.11.0"
-  }
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "dependencies": {}
 }
